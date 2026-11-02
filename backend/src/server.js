@@ -1,8 +1,9 @@
 const app = require('./app');
 const config = require('./config');
 
-const server = app.listen(config.port, () => {
-  console.log(`[Assetra Backend] Listening on http://localhost:${config.port} (${config.env} mode)`);
+const HOST = '0.0.0.0';
+const server = app.listen(config.port, HOST, () => {
+  console.log(`[Assetra Backend] Listening on http://${HOST}:${config.port} (${config.env} mode)`);
 });
 
 module.exports = server;

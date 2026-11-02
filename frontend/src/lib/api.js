@@ -3,7 +3,8 @@
  * Supports local development and production backends (e.g. Render / Railway).
  */
 
-const rawBase = (import.meta.env.VITE_API_URL || '').trim().replace(/\/+$/, '');
+const envApiUrl = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL) || '';
+const rawBase = envApiUrl.trim().replace(/\/+$/, '');
 
 export const API_BASE_URL = rawBase
   ? (rawBase.endsWith('/api') ? rawBase : `${rawBase}/api`)
