@@ -1,0 +1,95 @@
+# ==============================================================================
+# Assetra Root Git Ignore Configuration
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Dependencies
+# ------------------------------------------------------------------------------
+node_modules/
+**/node_modules/
+.pnpm-store/
+
+# ------------------------------------------------------------------------------
+# Production Builds & Bundler Output
+# ------------------------------------------------------------------------------
+dist/
+**/dist/
+build/
+**/build/
+out/
+.next/
+
+# ------------------------------------------------------------------------------
+# Hardhat & Solidity Artifacts
+# ------------------------------------------------------------------------------
+smart-contracts/cache/
+smart-contracts/artifacts/
+smart-contracts/typechain-types/
+cache/
+artifacts/
+
+# ------------------------------------------------------------------------------
+# Environment Variables, Secrets, & Credentials (CRITICAL)
+# ------------------------------------------------------------------------------
+.env
+.env.*
+*.env
+*.env.*
+*.env.txt
+**/.env
+**/.env.*
+**/.env.txt
+*.local
+
+# Whitelist safe documentation template files
+!*.env.example
+!**/.env.example
+
+# Private Keys, Certificates, and Wallets
+*.pem
+*.key
+*.keystore
+*.pfx
+*.p12
+*id_rsa*
+*.cert
+*.crt
+
+# Database & SQLite files
+*.sqlite
+*.sqlite3
+*.db
+
+# ------------------------------------------------------------------------------
+# Local Uploads, Scratch & Generated Files
+# ------------------------------------------------------------------------------
+backend/uploads/
+scratch/
+**/scratch/
+.system_generated/
+**/.user_uploaded/
+
+# ------------------------------------------------------------------------------
+# Logs & Process Dumps
+# ------------------------------------------------------------------------------
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# ------------------------------------------------------------------------------
+# Operating System & IDE Files
+# ------------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp

@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Local Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+
+# Hardhat Build Artifacts
+cache/
+artifacts/
+typechain-types/
+
+# Coverage
+coverage/
+coverage.json
