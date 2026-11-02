@@ -1,10 +1,12 @@
 /**
  * Assetra Frontend API Configuration
- * Supports local development and production backends (e.g. Render / Railway).
+ * Supports local development and production backends (e.g. Vercel Functions).
  */
 
 const envApiUrl = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL) || '';
 const rawBase = envApiUrl.trim().replace(/\/+$/, '');
+
+export const isBackendConfigured = Boolean(rawBase);
 
 export const API_BASE_URL = rawBase
   ? (rawBase.endsWith('/api') ? rawBase : `${rawBase}/api`)
@@ -13,8 +15,8 @@ export const API_BASE_URL = rawBase
 /**
  * Resolves an API path against the configured backend base URL.
  * Examples:
- *   getApiUrl('/api/assets') -> 'https://assetra-backend.onrender.com/api/assets' (or '/api/assets' locally)
- *   getApiUrl('/health')     -> 'https://assetra-backend.onrender.com/api/health' (or '/api/health' locally)
+ *   getApiUrl('/api/assets') -> 'https://assetra-api.vercel.app/api/assets' (or '/api/assets' locally)
+ *   getApiUrl('/health')     -> 'https://assetra-api.vercel.app/api/health' (or '/api/health' locally)
  */
 export function getApiUrl(path) {
   const cleanPath = path.startsWith('/') ? path : `/${path}`;

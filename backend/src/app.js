@@ -31,7 +31,7 @@ const configuredOrigins = (process.env.FRONTEND_URL || '')
 
 const corsOptions = {
   origin: (origin, callback) => {
-    // 1. Allow non-browser requests (curl, server-to-server, Railway health checks)
+    // 1. Allow non-browser requests (curl, server-to-server, Vercel/cloud health checks)
     if (!origin) {
       return callback(null, true);
     }
